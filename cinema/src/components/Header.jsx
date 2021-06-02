@@ -9,10 +9,10 @@ import {
 
 const Header = () => {
   return (
-    <div className="container">
+    <div className="appcontainer">
       <Jumbotron fluid className="header-jumbo-div">
         <Container>
-            <h1 className="display-1">Welcome.</h1>
+            <h1 className="header-welcome">Welcome.</h1>
             <p>Find upcoming, new, and past movies</p>
             <div className="header-input">
               <InputGroup className="mb-3 whata">
@@ -22,7 +22,7 @@ const Header = () => {
                   aria-describedby="basic-addon2"
                 />
                 <InputGroup.Append>
-                  <Button variant="primary">Search</Button>
+                  <Button variant="outline-info">Search</Button>
                 </InputGroup.Append>
               </InputGroup>
             </div>
