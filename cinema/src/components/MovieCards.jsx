@@ -1,15 +1,16 @@
-import React from 'react';
+import React from "react";
 
-const MovieCards = () => {
-    return (
-        <section className="card-container">
-            <div className="card">
-                <div className="card-image"></div>
-                <h2>Title</h2>
-                <p>Text</p>
-            </div>
-        </section>
-    )
-}
+const MovieCards = ({nowPlaying}) => {
+  return (
+    <section className="card-container">
+      <div className="movie-card">
+        <img src={nowPlaying[0].backdrop_path} className="card-image" />
+        <div className="movie-card-text">
+          <h4 style={{fontWeight: "lighter"}}>{nowPlaying[0].title}</h4>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default MovieCards;

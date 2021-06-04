@@ -13,6 +13,7 @@ function App() {
   useEffect(() => {
     const fetchItems = async () => {
       const result = await axios.get(
+        // gets movies now playing
         "https://api.themoviedb.org/3/movie/now_playing?api_key=3d349ab876628dc82a19513484e5220b&language=en-US&page=1"
       );
       setNowPlaying(result.data.results);
@@ -26,8 +27,7 @@ function App() {
     <div className="App">
       <AppNavbar />
       <Header />
-      <NowPlayingMovies />
-      <NowPlayingMovies />
+      <NowPlayingMovies nowPlaying={nowPlaying} />
     </div>
   );
 }
