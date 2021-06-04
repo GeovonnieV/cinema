@@ -27,6 +27,7 @@ function App() {
       <AppNavbar />
       <Header />
       <NowPlayingMovies />
+      <NowPlayingMovies />
     </div>
   );
 }
