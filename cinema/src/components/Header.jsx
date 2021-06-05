@@ -13,7 +13,7 @@ const Header = () => {
       <Jumbotron fluid className="header-jumbo-div">
         <Container>
             <h1 className="header-welcome">Welcome.</h1>
-            <p>Find upcoming, new, and past movies</p>
+            <h2 style={{color:"white"}}>Find upcoming, new, and past movies</h2>
             <div className="header-input">
               <InputGroup className="mb-3 whata">
                 <FormControl
