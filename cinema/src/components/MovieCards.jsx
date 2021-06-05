@@ -6,8 +6,11 @@ const MovieCards = ({ nowPlaying }) => {
   const movieTwo = nowPlaying[1];
   const movieThree = nowPlaying[2];
   const movieFour = nowPlaying[3];
-
-  return (
+  // fixes page reload undefined
+ const loadFalse = nowPlaying == false
+  // page reload undefined
+  return loadFalse ? (<h1>...Loading</h1>) : (
+    
     <section className="card-container">
       <div className="movie-card">
         <img
