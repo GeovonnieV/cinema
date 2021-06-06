@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
+// Router
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import axios from "axios";
 import "./styles/app.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 // Components
-import Header from "./components/Header";
-import AppNavbar from "./components/AppNavbar";
-import NowPlayingMovies from "./components/NowPlayingMovies";
+import Home from "./components/Home";
 
 function App() {
   const [nowPlaying, setNowPlaying] = useState([]);
@@ -21,13 +21,15 @@ function App() {
     fetchItems();
   }, []);
 
-  console.log(nowPlaying)
+  console.log(nowPlaying);
 
   return (
     <div className="App">
-      <AppNavbar />
-      <Header />
-      <NowPlayingMovies nowPlaying={nowPlaying} />
+      <Router>
+        <Switch>
+          <Home path="/" exact component={Home} nowPlaying={nowPlaying} />
+        </Switch>
+      </Router>
     </div>
   );
 }
