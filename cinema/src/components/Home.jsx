@@ -1,6 +1,6 @@
 import React from "react";
 import AppNavbar from "./AppNavbar";
-// import MoveiCards from "./MovieCards";
+import NowPlayingCards from "./NowPlayingCards";
 import {
   Jumbotron,
   Container,
@@ -9,7 +9,7 @@ import {
   Button,
 } from "react-bootstrap";
 
-const Home = ({ nowPlaying }) => {
+const Home = ({nowPlaying}) => {
   return (
     <div>
       <AppNavbar />
@@ -39,7 +39,8 @@ const Home = ({ nowPlaying }) => {
         {/*  */}
         <div className="appcontainer">
           <h1 className="now-title">Now Playing</h1>
-          {/* <MoveiCards nowPlaying={nowPlaying} /> */}
+          {/* Movie card? */}
+          <NowPlayingCards nowPlaying={nowPlaying} />
         </div>
       </div>
     </div>

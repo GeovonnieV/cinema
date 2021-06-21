@@ -5,6 +5,7 @@ import "./styles/app.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 // Components
 import Home from "./components/Home";
+import NowPlayingCards from "./components/NowPlayingCards";
 
 function App() {
   const [nowPlaying, setNowPlaying] = useState([]);
@@ -13,6 +14,7 @@ function App() {
   const getNowPlaying = async () => {
     const temp = await fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=3d349ab876628dc82a19513484e5220b&language=en-US&page=1`)
       .then((res) => res.json());
+      // sets nowPlaying to have 4 movies
       setNowPlaying(temp.results.slice(0,4));
   }
 
@@ -21,13 +23,12 @@ function App() {
   }, []);
   console.log(nowPlaying)
  
-
-
   return (
     <div className="App">
       <Router>
         <Switch>
-          <Home path="/" exact component={Home} />
+          <Home path="/" exact component={Home} nowPlaying={nowPlaying} />
+          <NowPlayingCards nowPlaying={nowPlaying} />
         </Switch>
       </Router>
     </div>
